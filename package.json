@@ -1,14 +1,14 @@
 {
   "name": "webcrawler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple webcrawler for learning about search engine basics",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["web-crawler","tdd","jest","jsdom"],
+  "author": "Aditya Kumar",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"

@@ -6,10 +6,19 @@ async function crawlPage(currentURL){
     try {
         const res = await fetch(currentURL)
         //response body is expected as html so we parse it to html
+        if( res.status > 399){
+            console.log(`Error in fetch with status code: ${res.status} on page :${currentURL}`)
+            return
+        }
+        const contentType = res.headers.get('content-type')
+        if(!contentType.includes("text/html")){
+            console.log(`Non HTML code found on page :${currentURL}`)
+            return
+        }
         const resText = await res.text()
         console.log(resText)
     } catch (error) {
-        console.log(`Error in fetch: ${err.message}, on page: ${currentURL}`)
+        console.log(`Error in fetch: ${error.message}, on page: ${currentURL}`)
     }
 }
 
